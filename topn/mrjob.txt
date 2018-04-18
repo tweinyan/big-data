@@ -1,0 +1,6 @@
+mrjob
+
+http://pythonhosted.org/mrjob/
+
+运行模式
+内嵌(-r inline)  本地(-r local) Hadoop(-r hadoop) Amazon EMR(-r emr)
