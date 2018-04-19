@@ -4,3 +4,7 @@ http://pythonhosted.org/mrjob/
 
 运行模式
 内嵌(-r inline)  本地(-r local) Hadoop(-r hadoop) Amazon EMR(-r emr)
+
+
+chmod +x TopNWords.py
+./TopNWords.py -r hadoop hdfs:///user/twein/data -o hdfs:///user/twein/output/data1
