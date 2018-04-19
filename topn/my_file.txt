@@ -1,3 +1,0 @@
-"chars" 3654
-"lines" 123
-"words" 417

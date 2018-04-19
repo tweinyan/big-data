@@ -31,7 +31,7 @@ class TopNWords(MRJob):
         ]
 
 def main():
-    TopNWords().run()
+    TopNWords.run()
 
 if __name__ == '__main__':
     main()
