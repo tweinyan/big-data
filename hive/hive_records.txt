@@ -40,3 +40,15 @@ hadoop fs -put user.txt /user/hive/warehouse/twein_test.db/test
 hive>show functions;
 desc function ***
 desc function extended ***
+
+临时函数
+CREATE TEMPORARY FUNCTION row_sequence as 'org.apache.hadoop.hive.contrib.udf.UDFRowSequence';
+
+永久函数
+CREATE FUNCTION test.row_sequence as 'org.apache.hadoop.hive.contrib.udf.UDFRowSequence' using jar 'hdfs:///user/hive/lib/hive-contrib-2.0.1.jar'
+
+
+python UDF
+* 编写map风格脚本
+* ADD file
+* Transform
