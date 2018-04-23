@@ -14,3 +14,29 @@ hadoop fs -put user.txt /user/hive/warehouse/twein_test.db/test
 (1)load data local inpath '/tmp/user.txt' into table test;
 2.从hive另一个表
 3.从关系型数据库导入(mysql)
+
+
+分区表
+
+利用分区方式减少查询时需要扫描的数据量
+* 分区字段不是表中的列，数据文件中是没有对应的列
+* 分区仅仅是一个目录名
+* 查看数据时，hive会自动添加分区列
+* 支持多级分区，多级子目录
+
+
+函数
+
+内置函数
+    * 简单函数：日期函数、字符串函数、类型转换。。。
+    * 统计函数：sum、avg、distinct
+    * 集合函数
+    * 分析函数
+
+自定义函数
+    * UDF: map
+    * UDAF: reduce
+
+hive>show functions;
+desc function ***
+desc function extended ***
