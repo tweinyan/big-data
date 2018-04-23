@@ -1,3 +1,10 @@
+hive
+
+把SQL语句转换成map-reducer任务，并完成数据封装
+* 解释器
+* 编译器
+* 优化器
+
 hadoop fs -ls /user/hive/warehouse/twein_test.db/test
 
 hadoop fs -put user.txt /user/hive/warehouse/twein_test.db/test
