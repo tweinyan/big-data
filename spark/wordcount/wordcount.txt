@@ -1,0 +1,7 @@
+* Spark1.6
+    sc = SparkContext('local')
+    doc = sc.textFile('file:///d:/app.log')
+    words = doc.flatMap(lambda x: x.split(" ")).map(lambda x: (x, 1)).reduceByKey(lambda x, y: x+y).collect()
+* Spark2.x
+    spark = SparkSession.builder.appName('test').master(master).getOrCreate()
+    sc = spark.sparkContext
