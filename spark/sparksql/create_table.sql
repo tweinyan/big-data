@@ -110,3 +110,61 @@ on a.user_id = b.user_id and datediff(b.create_date, a.reg_date)>=0 and date dif
 select a.reg_date, a.user_id
 from v_bindcard a join v_realname b
 on a.user_id = b.user_id
+
+
+==================== 用户申请 ====================
+drop table if exists test.user_action_apply;
+
+CREATE EXTERNAL TABLE test.user_action_apply(
+    id int,
+    user_id int,
+    bid int,
+    amount int,
+    period int,
+    period_unit int,
+    rate float,
+    period_type int,
+    create_date date
+) ROW FORMAT SERDE
+    'org.apache.hadseoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+    'field.delim'=',',
+    'line.delim'='\n'
+    'serialization.format'=',',
+    "serialization.encoding"='GBK'
+)
+STORED AS INPUTFORMAT
+    'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+    'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+    'hdfs:///tmp/zxm/uc/apply'
+;
+
+select * from test.user_action_apply limit 10;
+
+-- 七日内完成申请(在完成认证的基础上)
+
+select a.user_id, min(b.create_date) as apply_date
+from v_audit a join test.user_action_apply b
+on a.user_id = b.user_id
+and datediff(b.create_date, a.reg_date)>=0 adn datediff(b.create_date, a.reg_date)<7
+group by a.user_id
+
+==================== 每日转换率统计 ====================
+select a.reg_date, a.reg_cnt, ifnull(b.audit_cnt, 0) as audit_cnt, ifnull(c.apply_cnt, 0) as apply_cnt
+from
+(select reg_date, count(*) as reg_cnt
+from test.user_action_reg
+group by reg_date) a
+left join
+(select reg_date, count(*) as audit_cnt
+from v_audit
+group by reg_date) b
+on a.reg_date=b.reg_date
+left join
+(select reg_date, count(*) as apply_cnt
+from v_apply
+group by reg_date
+) c
+on a.reg_date=c.reg_date
