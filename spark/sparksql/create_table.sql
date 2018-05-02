@@ -99,10 +99,13 @@ LOCATION
 ;
 
 select * from test.user_action_bindcard limit 10;
+
 -- 七日内完成绑卡认证
 select distinct a.reg_date, a.user_id
 from test.user_action_reg a join test.user_action_bindcard b
 on a.user_id = b.user_id and datediff(b.create_date, a.reg_date)>=0 and date diff(b.create_date, a.reg_date)<7
+
+
 -- 七日内完成认证(包括实名和绑卡)
 select a.reg_date, a.user_id
 from v_bindcard a join v_realname b
