@@ -72,7 +72,7 @@ userConversionDF.show()
 url = 'jdbc:mysql://your_url:3306/db_name'
 user = ' '
 password = ' '
-table_name = 'user_+conversion_stat'
+table_name = 'user_conversion_stat'
 mysqlDriverName = "com.mysql.jdbc.Driver"
 
 userConversionDF.write.option("user", user).option("password", password).option('driver', mysqlDriverName).option(
