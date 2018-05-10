@@ -16,8 +16,8 @@
       <file leaf-file-name="ArrayTest.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/bigdata/array/ArrayTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="38" />
+            <state relative-caret-position="200">
+              <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -66,10 +66,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="783" />
-    <option name="y" value="-889" />
-    <option name="width" value="1176" />
-    <option name="height" value="732" />
+    <option name="x" value="908" />
+    <option name="y" value="-1057" />
+    <option name="width" value="853" />
+    <option name="height" value="973" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -312,12 +312,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525314951697</updated>
-      <workItem from="1525314956468" duration="14708000" />
+      <workItem from="1525314956468" duration="15412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14708000" />
+    <option name="totallyTimeSpent" value="15412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,7 +329,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="783" y="-889" width="1176" height="732" extended-state="0" />
+    <frame x="908" y="-1057" width="853" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -368,7 +368,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -406,8 +408,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/bigdata/array/ArrayTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="200">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,23 @@
+1.安装zookeeper
+
+下载后解压
+1. 进入zookeeper设置目录，例D:\elk\zookeeper-3.4.10\conf
+2. 将"zoo_sample.cfg"重命名为"zoo.cfg"
+3. 打开"zoo.cfg"
+4. 找到并编辑dataDir=D:\elk\zookeeper-3.4.10\data
+5. 在zoo.cfg文件中修改默认的zookeeper端口(默认2181)
+6. 打开新的cmd, 输入zkserver, 运行zookeeper
+
+2.安装kafka
+下载二进制版本
+解压到目录 例 D:\elk\kafka_2.11-0.11.0.0
+1. 进入kafka配置目录
+2. 编辑文件"server.properties"
+3. 找到并编辑log.dirs=D:\elk\kafka_2.11-0.11.0.0\logs
+4. 找到并修改zookeeper.connect=localhost:2181 表示本地运行
+5. kafka会按照默认，在9092端口上运行，并连接zookeeper的默认端口:2181
+
+运行: 请确保在启动kafka服务器前，zookeeper实例已经准备好并开始运行
+1. 进入kafka安装目录
+2. 输入以下命令
+.D:\elk\kafka_2.11-0.11.0.0\bin\windows>kafka-server-start.bat .... \config\server.properties
