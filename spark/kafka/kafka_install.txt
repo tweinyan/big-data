@@ -23,8 +23,11 @@
 .D:\elk\kafka_2.11-0.11.0.0\bin\windows>kafka-server-start.bat .... \config\server.properties
 
 3.测试kafka
-(1) 创建主题 .\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic zhangxx
-(2) 创建生产者 .\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic zhangxx
-(3) 创建消费者 .\bin\windows\kafka=console-consumer.bat --zookeeper localhost:2181 --topic zhangxx
+(1) 创建主题 .\bin\kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic zhangxx
+(2) 创建生产者 .\bin\kafka-console-producer.sh --broker-list localhost:9092 --topic zhangxx
+(3) 创建消费者 .\bin\kafka-console-consumer.sh --zookeeper localhost:2181 --topic zhangxx
 (4) 测试 在生产者命令窗口输入一句话进行测试，如: Hello I am zhang, who are you, 然后回车。可以看到消费者窗口获取到了这一信息
-\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --list|describe
+\bin\kafka-topics.sh --zookeeper localhost:2181 --list|describe
+
+开发环境配置
+* Spark-streaming-kafka library
