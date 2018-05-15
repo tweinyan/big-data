@@ -1,0 +1,20 @@
+状态操作
+* UpdateStateByKey
+* Windows操作
+
+使用有状态的transformation, 需要开启Checkpoint
+
+UpdateStateByKey 操作
+* 首先，要定义一个state，可以是任意的数据类型
+* 其次，要定义state更新函数————指定一个函数如何使用之前的state和新值来更新state
+* 对于每个batch，Spark都会为每个之前已经存在的key去应用一次state更新函数，无论这
+  个key在batch中是否有更新的数据。如果state更新函数返回none，那么key对应的state
+  就会被删除
+* 对于每个新出现的key，也会执行state更新函数
+
+windows
+
+滑动窗口的两个参数
+* 窗口长度L
+* 滑动间隔G
+每隔G秒，统计最近L秒的数据
