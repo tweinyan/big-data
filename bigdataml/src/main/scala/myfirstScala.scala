@@ -1,29 +1,30 @@
 /**
   * Created by tweinyan on 03/05/2018.
   */
+import scala.util.Random
 object myfirstScala {
-  class Point {
-    private var _x = 0
-    private var _y = 0
-    private val bound = 100
+  abstract class Notification
 
-    def x = _x
+  case class Email(sender: String, title: String, body: String) extends Notification
+  case class SMS(caller: String, message: String) extends  Notification
+  case class VoiceRecording(contactName: String, link: String) extends Notification
 
-    def x_= (newValue: Int): Unit = {
-      if (newValue < bound) _x = newValue else printWarning
+  def showNotification(notification: Notification): String = {
+    notification match {
+      case Email(email, title, _) =>
+        s"You got an email from $email with title: $title"
+      case SMS(number, message) =>
+        s"You got an SMS from $number! Message: $message"
+      case VoiceRecording(name, link) =>
+        s"you received a Voice Recoding from $name! Click the link to hear it: $link"
     }
-
-    def y = _y
-    def y_= (newValue: Int): Unit = {
-      if (newValue < bound) _y = newValue else printWarning
-    }
-
-    private def printWarning = println("WARNING: Out of bounds")
   }
 
   def main(args: Array[String]): Unit = {
-    val point1 = new Point
-    point1.x = 990
+    val someSms = SMS("12345", "Are you there?")
+    val someVoiceRecoding = VoiceRecording("Tom", "voicerecoding.org/id/123")
+    println(showNotification(someSms))
+    println(showNotification(someVoiceRecoding))
   }
   //def main(args: Array[String]): Unit = {
   //  noData
